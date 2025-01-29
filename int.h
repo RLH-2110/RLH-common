@@ -66,12 +66,24 @@
 	#endif
 
 
+
+
 	#ifdef BITS64
 
 		/* (u)int64 */ 
 		#if(UINT_MAX != 0xffffffffffffffff)
 			#if (ULONG_MAX != 0xffffffffffffffff)
-				#error NO UNSIGNED TYPE WITH SIZE OF 8 BYTES WAS FOUND!
+
+				#ifndef __SIZEOF_LONG_LONG__
+					#error NO UNSIGNED TYPE WITH SIZE OF 8 BYTES WAS FOUND!
+				#else
+					#if (__SIZEOF_LONG_LONG__ != 0x8) /* has 8 bytes?*/
+						#error NO UNSIGNED TYPE WITH SIZE OF 8 BYTES WAS FOUND!
+					#else
+						typedef unsigned long long uint64;
+					#endif
+				#endif
+
 			#else
 				typedef unsigned long uint64;
 			#endif
@@ -79,9 +91,20 @@
 			typedef unsigned int uint64;
 		#endif
 
+
 		#if(INT_MAX != 0x7fffffff)
 			#if (LONG_MAX != 0x7fffffff)
-				#error NO UNSIGNED TYPE WITH SIZE OF 8 BYTES WAS FOUND!
+				
+				#ifndef __SIZEOF_LONG_LONG__
+					#error NO TYPE WITH SIZE OF 8 BYTES WAS FOUND!
+				#else
+					#if (__SIZEOF_LONG_LONG__ != 0x8) /* has 8 bytes?*/
+						#error NO TYPE WITH SIZE OF 8 BYTES WAS FOUND!
+					#else
+						typedef long long uint64;
+					#endif
+				#endif
+
 			#else
 				typedef long int64;
 			#endif
