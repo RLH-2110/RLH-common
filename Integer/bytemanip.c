@@ -22,7 +22,7 @@ uint32 int32_reverseEndian(uint32 in) {
 	return result;
 }
 
-#ifdef 64BITS
+#ifdef BITS64
 	uint64 int64_reverseEndian(uint64 in) {
 		int8* resultptr;
 		int8* inptr;

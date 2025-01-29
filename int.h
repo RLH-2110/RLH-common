@@ -8,7 +8,7 @@
 
 	this is because ISO C does not have stdint.h
 
-	if you have defined 64BITS, then these types are also defined;
+	if you have defined BITS64, then these types are also defined;
 	uint64, int64
 */
 
@@ -66,7 +66,7 @@
 	#endif
 
 
-	#ifdef 64BITS
+	#ifdef BITS64
 
 		/* (u)int64 */ 
 		#if(UINT_MAX != 0xffffffffffffffff)
@@ -89,7 +89,7 @@
 			typedef int int64;
 		#endif
 
-	/* 64BITS */
+	/* BITS64 */
 	#endif
 
 
