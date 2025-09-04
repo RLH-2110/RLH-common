@@ -1,4 +1,5 @@
 #include "../int.h"
+#include "../common_defines.h"
 
 /* This file handles the command line flags */
 
