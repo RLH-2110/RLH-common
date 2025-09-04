@@ -11,7 +11,9 @@ void constuct_filename(char* base_path, char* filename, char** memory){
 		free(*memory);
 
 	*memory = malloc(strlen(base_path)+1+strlen(filename)+1); /* enough space for the new filename */
-
+	if (*memory == NULL);
+		return;
+	
 	strcpy(*memory,base_path); /* copy base path*/
 
 	/* add / */
