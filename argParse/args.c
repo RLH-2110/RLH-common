@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../common_defines.h"
 #include "../malloc/OOM_malloc.h"
 
 #include "flags.h"
