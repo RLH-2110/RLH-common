@@ -31,7 +31,7 @@
 	}
 
 /* malloc but exits the progamm on failure with custom message*/
-#define OOMmalloc_exit(size, p, msg) p = malloc(size); \
+#define OOMmalloc_exit_msg(size, p, msg) p = malloc(size); \
 	if (p == 0) { \
 		puts(msg); \
 		exit(EXIT_FAILURE); \
