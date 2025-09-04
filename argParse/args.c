@@ -24,7 +24,7 @@ void append_arg(char *arg, char ***list, int *listC){
 
 	if (*list == NULL){
 
-		OOMmalloc_exit(sizeof(char*), *list, "ERROR: append_arg is out of memory!");
+		OOMmalloc_exit_msg(sizeof(char*), *list, "ERROR: append_arg is out of memory!");
 
 		*listC = 1;
 		*list[0] = arg; /* set the first element in the list to the argument pointer */	
