@@ -7,5 +7,6 @@ void* OOMmalloc_exit(size_t size) {
 		puts("out of memory");
 		exit(EXIT_FAILURE);
 	}
+	return p;
 }
 
